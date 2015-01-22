@@ -51,10 +51,10 @@ cacheSolve <- function(x, ...) {
                 #if the inverse is not null return the inverse value
                 return(inv)
         }
-        #if the value of matrui
-        matrix <- x$get()
-        inv <- solve(matrix,...)
-        x$setinv(inv)
-        inv
         
+        matrix <- x$get() #get the current value of matrix
+        
+        inv <- solve(matrix,...) #calculate inverse
+        x$setinv(inv)  #set the inverse for later use
+        inv #return inverse 
 }
